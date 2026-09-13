@@ -1,0 +1,54 @@
+# Plugin registry（双轨插件清单）
+# 手工维护（不随 scan 同步）；对齐 innate-wip docs/solution/plugin-dual-track.md 的 SitePlugin 语义
+# track: package = 构建时组合（发布为 @innate/plugin-*，源头在 base/innate-fe-base）
+#        iframe  = 客户端运行时逃生门（仅限外部工具/不可信/独立部署）
+# status: in-base = 已迁入基座；in-app = 仍在 app 仓内（迁移目标见 targetHome）；planned = 规划中
+
+plugins:
+  - id: making
+    name: Making
+    track: package
+    status: in-app
+    source: innate-wip/lib/plugins/registry.ts（route loadMode）
+    targetHome: "@innate/plugin-making"
+    desc: 项目追踪引擎（projects/weekly/insights/issues），通用可复用
+
+  - id: cheatsheets
+    name: Cheatsheets
+    track: package
+    status: in-app
+    source: innate-wip/lib/plugins/registry.ts（route loadMode）
+    targetHome: "@innate/plugin-cheatsheets"
+    desc: 参考手册引擎（含 betterstack-guides 内容包）
+
+  - id: awesome
+    name: Awesome
+    track: package
+    status: in-app
+    source: innate-wip/lib/plugins/registry.ts（route loadMode）
+    targetHome: "@innate/plugin-awesome"
+    desc: 精选清单渲染引擎
+
+  - id: writing
+    name: Writing
+    track: route
+    status: in-app
+    source: innate-wip/app/writing
+    targetHome: null
+    desc: 站点私有内容主题（不迁移：无跨 app 复用视野）
+
+  - id: feed
+    name: Feed
+    track: route
+    status: in-app
+    source: innate-wip/app/feed
+    targetHome: null
+    desc: 站点私有内容主题（复用 writing 渲染管线）
+
+  - id: collections-viewer
+    name: Collections Viewer
+    track: iframe
+    status: in-app
+    source: innate-wip/components/collections/collection-viewer.tsx
+    targetHome: null
+    desc: iframe 先例：外部 URL 查看器（sandbox 模式参考）

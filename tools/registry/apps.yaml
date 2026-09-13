@@ -1,0 +1,5 @@
+# Project registry
+# Synced by innate-registry-cli scan: source of truth is actual dir contents; entries are added/moved/deleted and desc is preserved
+# innate-registry-cli clone reads this file and clones each project into its path field
+
+projects:

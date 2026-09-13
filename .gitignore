@@ -1,0 +1,11 @@
+.DS_Store
+.env
+.env.*
+*.pem
+*.key
+
+tools/innate-registry-cli/node_modules/
+tools/innate-selfhost-cli/node_modules/
+tools/bin/
+tools/registry/.apps.roundtrip.yaml
+references/

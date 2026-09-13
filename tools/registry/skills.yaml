@@ -1,0 +1,35 @@
+# Skill registry（Agent 知识清单）
+# 手工维护；分层规则见 docs/innate-factory/phase-2-base-hub/ 与 innate-wip docs/solution/innate-factory.md §8
+# level: repo = 随 app 仓版本化（.agents/skills/，agent 在仓内自动发现）
+#        user = 跨项目通用（软链到 ~/.agents/skills/，innate skill link 分发）
+
+skills:
+  - name: backend-go
+    level: repo
+    path: base/innate-backend/skills/backend-go
+    linked: []
+    desc: Go 后端开发 skill（vine 框架、数据库、微服务）
+
+  - name: innate-fe-base-dev
+    level: repo
+    path: base/innate-fe-base/.agents/skills
+    linked: []
+    desc: fe-base 仓级开发 skill（phase-0 已收窄 .gitignore；文件在 fe-base 子仓内跟踪）
+
+  - name: wip-skills-entry
+    level: user
+    path: skills/wip-skills
+    linked: []
+    desc: Skill 实验区入口（落点 skills/，内容入库状态依赖 phase-0 的 .gitignore 收窄）
+
+  - name: hallmark
+    level: repo
+    path: skills/fe-design-skills/hallmark
+    linked: []
+    desc: 前端设计 hallmark skill（配套 skill，落点 skills/fe-design-skills）
+
+  - name: innate-wip-dev
+    level: repo
+    path: innate-apps/content/innate-wip（规划中，app-content 模板随生成）
+    linked: []
+    desc: innate-wip 仓级 skill：dev/build/verify、static export 约束、sync:* 数据管道、plugin registry 规则

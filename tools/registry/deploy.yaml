@@ -1,0 +1,35 @@
+# Deploy registry（部署映射：代码单元 ≠ 部署单元）
+# 手工维护；一个 app 可登记多个部署目标
+# type: pages     = GitHub Pages（本仓直发或 Actions 推壳仓）
+#      cloudflare = Cloudflare Pages 项目
+#      none       = 暂不部署（本地/实验）
+
+deploys:
+  - app: innate-wip
+    targets:
+      - type: pages
+        workflow: innate-wip/.github/workflows/deploy-pages.yml
+        note: 本仓直发
+      - type: cloudflare
+        workflow: innate-wip/.github/workflows/deploy-cloudflare.yml
+        note: 与 pages 并行
+
+  - app: qdriven
+    targets:
+      - type: pages
+        note: github-profile 仓（按其仓内 workflow）
+
+  - app: innate-keepthem
+    targets:
+      - type: none
+        note: 待登记
+
+  - app: innate-aiswitcher
+    targets:
+      - type: none
+        note: 待登记
+
+  - app: spark-cli
+    targets:
+      - type: none
+        note: CLI 工具，npm 分发而非站点部署

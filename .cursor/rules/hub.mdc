@@ -1,0 +1,24 @@
+---
+description: Hub 文档仓边界：不写实现，catalog 为产品清单真相源
+alwaysApply: true
+---
+
+# Hub boundary
+
+This Cursor project is a documentation hub, not an implementation repo.
+
+- Do not add product, infra, or collector source code, app manifests (`package.json`, `go.mod`, etc.), or dependency trees in this repository — except CLIs under `tools/innate-registry-cli/` and `tools/innate-selfhost-cli/`.
+- `product-center/catalog.md` is the only product list. Create or rename a product there first, then scaffold `product-center/products/<slug>/`.
+- Implementation paths belong in that product’s `links.md`, not copied through many notes.
+- New captures: `docs/inbox/` if unsorted; domain `idea/` if the domain is clear; `docs/idea/` only for cross-domain analysis.
+- Prefer `@` the relevant README, catalog, or folder over a whole-repo search.
+- Do not add nested `AGENTS.md`. Use `.cursor/rules/*.mdc` with `globs` for domain-specific style.
+
+```markdown
+# ❌ BAD — implementing inside the hub
+product-center/products/foo/src/main.go
+
+# ✅ GOOD — docs and a pointer
+product-center/products/foo/spec/overview.md
+product-center/products/foo/links.md   # 本机 / git / Cursor Project
+```

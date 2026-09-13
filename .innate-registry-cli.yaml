@@ -1,0 +1,36 @@
+# Project layout for innate-registry-cli. Other repos copy this file and change the values.
+worksRoot: ../innate-works
+worksName: innate-works
+appsRoot: ../innate-apps
+appsPrefix: innate-apps
+registry: tools/registry/apps.yaml
+refsRegistry: registry.yaml
+scanDirs:
+  - innate-apps
+  - base
+  - skills
+refsScanDirs:
+  - skills
+  - base
+  - projects
+  - references
+sectionSecondOnly:
+  - innate-apps
+sectionKeepPrefix:
+  - references
+defaultDescBySection:
+  references/content: Content creation reference projects
+  references/docs: Documentation reference projects
+  references/fe: Frontend reference projects
+  references/harness: Harness/DSH plugin and tool reference projects
+  references/papers: Papers reference projects
+  references/projects: Reference projects
+  references/router: Router-related reference projects
+  references/skills-hub: Skill-related reference projects
+  references/solutions: Solutions reference projects
+  references/tooling: Tooling reference projects
+  references/tutorials: Tutorials/learning materials reference projects
+  tooling: Personal tooling apps
+  content: Content-related apps
+  base: Innate base/template projects
+  skills: Companion skill collections
