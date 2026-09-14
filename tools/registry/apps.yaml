@@ -3,6 +3,7 @@
 # innate-registry-cli clone reads this file and clones each project into its path field
 
 projects:
+<<<<<<< HEAD
   # === innate-chaos ===
   - name: innate-chaos
     repo: https://github.com/variableway/innate-chaos.git
@@ -11,6 +12,33 @@ projects:
   - name: innate-ai-industry
     repo: https://github.com/qdriven/innate-ai-industry.git
     path: innate-apps/innate-chaos/innate-ai-industry
+=======
+  # === base ===
+  - name: flock
+    repo: https://github.com/Onelevenvy/flock.git
+    path: base/references/desktop-ref/flock
+    desc: Innate base/template projects
+
+  - name: repo-template
+    repo: https://github.com/ianlewis/repo-template.git
+    path: base/references/templates-repo/repo-template
+    desc: Innate base/template projects
+
+  - name: repo-template-go
+    repo: https://github.com/ianlewis/repo-template-go.git
+    path: base/references/templates-repo/repo-template-go
+    desc: Innate base/template projects
+
+  - name: repo-template-py
+    repo: https://github.com/ianlewis/repo-template-py.git
+    path: base/references/templates-repo/repo-template-py
+    desc: Innate base/template projects
+
+  - name: repo-template-ts
+    repo: https://github.com/ianlewis/repo-template-ts.git
+    path: base/references/templates-repo/repo-template-ts
+    desc: Innate base/template projects
+>>>>>>> a5cd4f1 (scan: cover hub-hosted base/projects repos in apps registry)
 
   # === skills ===
   - name: devops-skill
@@ -23,26 +51,169 @@ projects:
     path: skills/figures-skill
     desc: Companion skill collections
 
+<<<<<<< HEAD
+=======
+  - name: andrej-karpathy-skills
+    repo: https://github.com/multica-ai/andrej-karpathy-skills.git
+    path: skills/figures-skill/andrej-karpathy-skills
+    desc: Companion skill collections
+
+  - name: darwin-skill
+    repo: https://github.com/alchaincyf/darwin-skill.git
+    path: skills/figures-skill/darwin-skill
+    desc: Companion skill collections
+
+  - name: elon-musk-skill
+    repo: https://github.com/alchaincyf/elon-musk-skill.git
+    path: skills/figures-skill/elon-musk-skill
+    desc: Companion skill collections
+
+  - name: feynman-skill
+    repo: https://github.com/alchaincyf/feynman-skill.git
+    path: skills/figures-skill/feynman-skill
+    desc: Companion skill collections
+
+  - name: human-skill-tree
+    repo: https://github.com/24kchengYe/human-skill-tree.git
+    path: skills/figures-skill/human-skill-tree
+    desc: Companion skill collections
+
+  - name: mrbeast-skill
+    repo: https://github.com/alchaincyf/mrbeast-skill.git
+    path: skills/figures-skill/mrbeast-skill
+    desc: Companion skill collections
+
+  - name: munger-skill
+    repo: https://github.com/alchaincyf/munger-skill.git
+    path: skills/figures-skill/munger-skill
+    desc: Companion skill collections
+
+  - name: paul-graham-skill
+    repo: https://github.com/alchaincyf/paul-graham-skill.git
+    path: skills/figures-skill/paul-graham-skill
+    desc: Companion skill collections
+
+  - name: taleb-skill
+    repo: https://github.com/alchaincyf/taleb-skill.git
+    path: skills/figures-skill/taleb-skill
+    desc: Companion skill collections
+
+  - name: trump-skill
+    repo: https://github.com/alchaincyf/trump-skill.git
+    path: skills/figures-skill/trump-skill
+    desc: Companion skill collections
+
+  - name: zhang-yiming-skill
+    repo: https://github.com/alchaincyf/zhang-yiming-skill.git
+    path: skills/figures-skill/zhang-yiming-skill
+    desc: Companion skill collections
+
+  - name: zhangxuefeng-skill
+    repo: https://github.com/alchaincyf/zhangxuefeng-skill.git
+    path: skills/figures-skill/zhangxuefeng-skill
+    desc: Companion skill collections
+
+>>>>>>> a5cd4f1 (scan: cover hub-hosted base/projects repos in apps registry)
   - name: fin-skills
     repo: https://github.com/qdriven/fin-skills.git
     path: skills/fin-skills
     desc: Companion skill collections
 
+<<<<<<< HEAD
+=======
+  - name: OpenTrade
+    repo: https://github.com/OpenTradeOSS/OpenTrade.git
+    path: skills/fin-skills/OpenTrade
+    desc: Companion skill collections
+
+  - name: TradingAgents-astock
+    repo: https://github.com/simonlin1212/TradingAgents-astock.git
+    path: skills/fin-skills/TradingAgents-astock
+    desc: Companion skill collections
+
+  - name: a-stock-data
+    repo: https://github.com/simonlin1212/a-stock-data.git
+    path: skills/fin-skills/a-stock-data
+    desc: Companion skill collections
+
+  - name: ai-market-maker
+    repo: https://github.com/olaxbt/ai-market-maker.git
+    path: skills/fin-skills/ai-market-maker
+    desc: Companion skill collections
+
+  - name: nautilus_trader
+    repo: https://github.com/nautechsystems/nautilus_trader.git
+    path: skills/fin-skills/nautilus_trader
+    desc: Companion skill collections
+
+>>>>>>> a5cd4f1 (scan: cover hub-hosted base/projects repos in apps registry)
   - name: fire-skills
     repo: https://github.com/variableway/fire-skills.git
     path: skills/fire-skills
     desc: Companion skill collections
 
+<<<<<<< HEAD
+=======
+  - name: LifeOS
+    repo: https://github.com/danielmiessler/LifeOS.git
+    path: skills/fire-skills/references/LifeOS
+    desc: Companion skill collections
+
+  - name: qling
+    repo: https://github.com/Zzy-min/qling.git
+    path: skills/fire-skills/references/qling
+    desc: Companion skill collections
+
+  - name: skill-deck
+    repo: https://github.com/Hccake/skill-deck.git
+    path: skills/fire-skills/references/skill-deck
+    desc: Companion skill collections
+
+  - name: skillkit
+    repo: https://github.com/robotbird/skillkit.git
+    path: skills/fire-skills/references/skillkit
+    desc: Companion skill collections
+
+  - name: skills
+    repo: https://github.com/Hccake/skills.git
+    path: skills/fire-skills/references/skills
+    desc: Companion skill collections
+
+>>>>>>> a5cd4f1 (scan: cover hub-hosted base/projects repos in apps registry)
   - name: presentation-skills
     repo: https://github.com/qdriven/presentation-skills.git
     path: skills/presentation-skills
     desc: Companion skill collections
 
+<<<<<<< HEAD
+=======
+  - name: baoyu-design
+    repo: https://github.com/JimLiu/baoyu-design.git
+    path: skills/presentation-skills/baoyu-design
+    desc: Companion skill collections
+
+  - name: dashi-ppt-skill
+    repo: https://github.com/chuspeeism/dashi-ppt-skill.git
+    path: skills/presentation-skills/dashi-ppt-skill
+    desc: Companion skill collections
+
+  - name: dashi-taskboard
+    repo: https://github.com/chuspeeism/dashi-taskboard.git
+    path: skills/presentation-skills/dashi-taskboard
+    desc: Companion skill collections
+
+  - name: speclip-skills
+    repo: https://github.com/linyqh/speclip-skills.git
+    path: skills/presentation-skills/speclip-skills
+    desc: Companion skill collections
+
+>>>>>>> a5cd4f1 (scan: cover hub-hosted base/projects repos in apps registry)
   - name: sdlc-skills
     repo: https://github.com/qdriven/sdlc-skills.git
     path: skills/sdlc-skills
     desc: Companion skill collections
 
+<<<<<<< HEAD
   - name: wip-skills
     repo: https://github.com/qdriven/wip-skills.git
     path: skills/wip-skills
@@ -53,3 +224,137 @@ projects:
     repo: https://github.com/variableway/innate-backend.git
     path: base/innate-backend
     desc: Innate base/template projects
+=======
+  - name: baoyu-skills-studio
+    repo: https://github.com/luoianun/baoyu-skills-studio.git
+    path: skills/sdlc-skills/baoyu-skills-studio
+    desc: Companion skill collections
+
+  - name: oil-frontend
+    repo: https://github.com/oil-oil/oil-frontend.git
+    path: skills/sdlc-skills/oil-frontend
+    desc: Companion skill collections
+
+  - name: 21st-frontend-design
+    repo: https://github.com/sants2001/21st-frontend-design.git
+    path: skills/sdlc-skills/sdlc/21st-frontend-design
+    desc: Companion skill collections
+
+  - name: Earnest-Portfolio-New
+    repo: https://github.com/earnest-s/Earnest-Portfolio-New.git
+    path: skills/sdlc-skills/sdlc/Earnest-Portfolio-New
+    desc: Companion skill collections
+
+  - name: UI-Deslopify-Skill
+    repo: https://github.com/AntonioSpagnol/UI-Deslopify-Skill.git
+    path: skills/sdlc-skills/sdlc/UI-Deslopify-Skill
+    desc: Companion skill collections
+
+  - name: avoid-ai-design
+    repo: https://github.com/funboy322/avoid-ai-design.git
+    path: skills/sdlc-skills/sdlc/avoid-ai-design
+    desc: Companion skill collections
+
+  - name: awesome-claude-code-skills
+    repo: https://github.com/helloianneo/awesome-claude-code-skills.git
+    path: skills/sdlc-skills/sdlc/awesome-claude-code-skills
+    desc: Companion skill collections
+
+  - name: cc-skills-golang
+    repo: https://github.com/samber/cc-skills-golang.git
+    path: skills/sdlc-skills/sdlc/cc-skills-golang
+    desc: Companion skill collections
+
+  - name: dev-skills
+    repo: https://github.com/jamestorrevillas/dev-skills.git
+    path: skills/sdlc-skills/sdlc/dev-skills
+    desc: Companion skill collections
+
+  - name: frontend-design-engineer-skill
+    repo: https://github.com/angelapaia/frontend-design-engineer-skill.git
+    path: skills/sdlc-skills/sdlc/frontend-design-engineer-skill
+    desc: Companion skill collections
+
+  - name: frontend-design-masterclass
+    repo: https://github.com/aaaronmiller/frontend-design-masterclass.git
+    path: skills/sdlc-skills/sdlc/frontend-design-masterclass
+    desc: Companion skill collections
+
+  - name: frontend-slides
+    repo: https://github.com/zarazhangrui/frontend-slides.git
+    path: skills/sdlc-skills/sdlc/frontend-slides
+    desc: Companion skill collections
+
+  - name: frontend-slides-editable
+    repo: https://github.com/archlizheng/frontend-slides-editable.git
+    path: skills/sdlc-skills/sdlc/frontend-slides-editable
+    desc: Companion skill collections
+
+  - name: golang-skills
+    repo: https://github.com/cxuu/golang-skills.git
+    path: skills/sdlc-skills/sdlc/golang-skills
+    desc: Companion skill collections
+
+  - name: harness-anchor
+    repo: https://github.com/Redtropig/harness-anchor.git
+    path: skills/sdlc-skills/sdlc/harness-anchor
+    desc: Companion skill collections
+
+  - name: lnikita
+    repo: https://github.com/Nigismo/lnikita.git
+    path: skills/sdlc-skills/sdlc/lnikita
+    desc: Companion skill collections
+
+  - name: my-portfolio
+    repo: https://github.com/Northstrix/my-portfolio.git
+    path: skills/sdlc-skills/sdlc/my-portfolio
+    desc: Companion skill collections
+
+  - name: skills
+    repo: https://github.com/mattpocock/skills.git
+    path: skills/sdlc-skills/sdlc/skills
+    desc: Companion skill collections
+
+  - name: superpowers
+    repo: https://github.com/obra/superpowers.git
+    path: skills/sdlc-skills/sdlc/superpowers
+    desc: Companion skill collections
+
+  - name: taste-skill
+    repo: https://github.com/Leonxlnx/taste-skill.git
+    path: skills/sdlc-skills/sdlc/taste-skill
+    desc: Companion skill collections
+
+  - name: ui-pro-magic
+    repo: https://github.com/NeousAxis/ui-pro-magic.git
+    path: skills/sdlc-skills/sdlc/ui-pro-magic
+    desc: Companion skill collections
+
+  # === innate-spark/base ===
+  - name: innate-backend
+    repo: https://github.com/variableway/innate-backend.git
+    path: innate-spark/base/innate-backend
+    desc: Hub-hosted shared base projects
+
+  - name: innate-fe-base
+    repo: https://github.com/variableway/innate-fe-templates.git
+    path: innate-spark/base/innate-fe-base
+    desc: Hub-hosted shared base projects
+    publishes: ["@innate/ui"]
+
+  # === innate-spark/projects ===
+  - name: reset-from-zero
+    repo: https://github.com/variableway/reset-from-zero.git
+    path: innate-spark/projects/edu/reset-from-zero
+    desc: Hub-hosted product projects
+
+  - name: innate-executable
+    repo: https://github.com/variableway/innate-executable.git
+    path: innate-spark/projects/edu/reset-from-zero/innate-executable
+    desc: Hub-hosted product projects
+
+  - name: qdriven
+    repo: https://github.com/qdriven/qdriven.git
+    path: innate-spark/projects/profiles/qdriven
+    desc: Hub-hosted product projects
+>>>>>>> a5cd4f1 (scan: cover hub-hosted base/projects repos in apps registry)

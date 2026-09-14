@@ -29,7 +29,11 @@ export type LayoutOverrides = {
 
 export type RuntimeLayout = {
   hubRoot: string;
+<<<<<<< HEAD
   hubScanDirs: string[];
+=======
+  hubName: string;
+>>>>>>> a5cd4f1 (scan: cover hub-hosted base/projects repos in apps registry)
   worksRoot: string;
   appsRoot: string;
   appsPrefix: string;

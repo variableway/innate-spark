@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Keep tools/registry/apps.yaml in sync with innate-works repos.
+# Keep tools/registry/apps.yaml in sync with innate-works and hub-hosted repos.
 #
 # Install from the hub repo root:
 #   ln -sf ../../tools/pre-commit.sh .git/hooks/pre-commit
@@ -19,7 +19,7 @@ REGISTRY="tools/registry/apps.yaml"
 
 cd "$HUB_ROOT"
 
-echo "[pre-commit] scanning innate-apps/ + base/ + skills/ -> $REGISTRY"
+echo "[pre-commit] scanning innate-apps/ + base/ + skills/ + innate-spark/{base,projects} -> $REGISTRY"
 if [ -x "$BIN" ]; then
     "$BIN" scan
 elif command -v bun >/dev/null 2>&1; then

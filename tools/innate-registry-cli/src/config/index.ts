@@ -91,6 +91,11 @@ export function resolveOnDisk(layout: RuntimeLayout, relPath: string): string {
       return join(layout.hubRoot, relPath);
     }
   }
+  const hub = layout.hubName;
+  if (hub && (relPath === hub || relPath.startsWith(`${hub}/`))) {
+    const rest = relPath === hub ? "" : relPath.slice(hub.length + 1);
+    return rest ? join(layout.hubRoot, rest) : layout.hubRoot;
+  }
   return join(layout.worksRoot, relPath);
 }
 
@@ -98,8 +103,14 @@ export function resolveScanRoot(layout: RuntimeLayout, name: string): { root: st
   if (layout.appsPrefix && name === layout.appsPrefix) {
     return { root: layout.appsRoot, relBase: dirname(layout.appsRoot) };
   }
+<<<<<<< HEAD
   if (isHubScanDir(layout, name)) {
     return { root: join(layout.hubRoot, name), relBase: layout.hubRoot };
+=======
+  if (layout.hubName && (name === layout.hubName || name.startsWith(`${layout.hubName}/`))) {
+    const rest = name === layout.hubName ? "" : name.slice(layout.hubName.length + 1);
+    return { root: rest ? join(layout.hubRoot, rest) : layout.hubRoot, relBase: dirname(layout.hubRoot) };
+>>>>>>> a5cd4f1 (scan: cover hub-hosted base/projects repos in apps registry)
   }
   return { root: resolveOnDisk(layout, name), relBase: layout.worksRoot };
 }
@@ -144,7 +155,11 @@ export function resolveLayout(cwd = process.cwd(), overrides: LayoutOverrides = 
 
   return {
     hubRoot,
+<<<<<<< HEAD
     hubScanDirs: file.hubScanDirs ?? [],
+=======
+    hubName: basename(hubRoot),
+>>>>>>> a5cd4f1 (scan: cover hub-hosted base/projects repos in apps registry)
     worksRoot,
     appsRoot,
     appsPrefix,

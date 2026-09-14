@@ -54,24 +54,44 @@ describe("extraFields", () => {
 describe("apps.yaml", () => {
   const registry = join(import.meta.dir, "../../../registry/apps.yaml");
 
-  test("parses the moved registry", () => {
+  test("parses the live registry including hub-hosted repos", () => {
     const projects = readExisting(registry);
     expect(projects.length).toBeGreaterThan(0);
-    const wip = projects.find((p) => p.name === "innate-wip");
-    expect(wip?.kind).toBe("app");
-    expect(wip?.deploy).toEqual(["pages", "cloudflare"]);
-    const base = projects.find((p) => p.name === "innate-fe-base");
-    expect(base?.publishes).toEqual(["@innate/ui"]);
+    const feBase = projects.find((p) => p.name === "innate-fe-base");
+    expect(feBase?.repo).toBe("https://github.com/variableway/innate-fe-templates.git");
+    expect(feBase?.path).toBe("innate-spark/base/innate-fe-base");
+    expect(feBase?.publishes).toEqual(["@innate/ui"]);
+    const backend = projects.find((p) => p.name === "innate-backend");
+    expect(backend?.path).toBe("innate-spark/base/innate-backend");
   });
 
   test("round-trip write keeps extra fields", () => {
-    const projects = readExisting(registry);
+    const projects = [
+      {
+        name: "innate-wip",
+        repo: "https://example.com/wip.git",
+        path: "innate-apps/content/innate-wip",
+        desc: "flagship",
+        kind: "app",
+        template: "app-content",
+        templateVersion: "v0",
+        deploy: ["pages", "cloudflare"],
+      },
+      {
+        name: "innate-fe-base",
+        repo: "https://github.com/variableway/innate-fe-templates.git",
+        path: "innate-spark/base/innate-fe-base",
+        desc: "",
+        publishes: ["@innate/ui"],
+      },
+    ];
     const tmp = join(import.meta.dir, "../../../registry/.apps.roundtrip.yaml");
     writeRegistry(projects, tmp, "test", "test");
     const again = readExisting(tmp);
     unlinkSync(tmp);
     expect(new Set(again.map((p) => p.name))).toEqual(new Set(projects.map((p) => p.name)));
     expect(again.find((p) => p.name === "innate-wip")?.deploy).toEqual(["pages", "cloudflare"]);
+    expect(again.find((p) => p.name === "innate-wip")?.templateVersion).toBe("v0");
     expect(again.find((p) => p.name === "innate-fe-base")?.publishes).toEqual(["@innate/ui"]);
   });
 });

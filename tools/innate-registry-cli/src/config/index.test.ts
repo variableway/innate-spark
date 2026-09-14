@@ -1,12 +1,16 @@
 import { describe, expect, test } from "bun:test";
 import { resolve } from "node:path";
-import { resolveLayout, resolveOnDisk } from "./index.ts";
+import { resolveLayout, resolveOnDisk, resolveScanRoot } from "./index.ts";
 import type { RuntimeLayout } from "./types.ts";
 
 function layout(partial: Partial<RuntimeLayout>): RuntimeLayout {
   return {
     hubRoot: "/hub",
+<<<<<<< HEAD
     hubScanDirs: [],
+=======
+    hubName: "",
+>>>>>>> a5cd4f1 (scan: cover hub-hosted base/projects repos in apps registry)
     worksRoot: "/works",
     appsRoot: "/works",
     appsPrefix: "",
@@ -34,6 +38,7 @@ describe("resolveOnDisk", () => {
     expect(resolveOnDisk(current, "base/x")).toBe("/works/base/x");
   });
 
+<<<<<<< HEAD
   test("maps hubScanDirs onto hubRoot before worksRoot", () => {
     const current = layout({
       hubRoot: "/hub",
@@ -46,6 +51,36 @@ describe("resolveOnDisk", () => {
     expect(resolveOnDisk(current, "base")).toBe("/hub/base");
     expect(resolveOnDisk(current, "skills/foo")).toBe("/works/skills/foo");
     expect(resolveOnDisk(current, "innate-apps/bar")).toBe("/elsewhere/apps/bar");
+=======
+  test("maps hubName paths onto hubRoot", () => {
+    const current = layout({ hubRoot: "/hub", hubName: "my-hub", worksRoot: "/works" });
+    expect(resolveOnDisk(current, "my-hub/base/x")).toBe("/hub/base/x");
+    expect(resolveOnDisk(current, "my-hub")).toBe("/hub");
+    expect(resolveOnDisk(current, "base/x")).toBe("/works/base/x");
+  });
+
+  test("appsPrefix wins when it collides with hubName", () => {
+    const current = layout({
+      hubRoot: "/hub",
+      hubName: "shared",
+      appsRoot: "/elsewhere/apps",
+      appsPrefix: "shared",
+    });
+    expect(resolveOnDisk(current, "shared/foo")).toBe("/elsewhere/apps/foo");
+  });
+});
+
+describe("resolveScanRoot", () => {
+  test("routes hub-prefixed scan dirs into the hub with hub-relative paths", () => {
+    const current = layout({ hubRoot: "/parent/my-hub", hubName: "my-hub", worksRoot: "/works" });
+    expect(resolveScanRoot(current, "my-hub")).toEqual({ root: "/parent/my-hub", relBase: "/parent" });
+    expect(resolveScanRoot(current, "my-hub/base")).toEqual({ root: "/parent/my-hub/base", relBase: "/parent" });
+  });
+
+  test("keeps plain dirs on worksRoot", () => {
+    const current = layout({ hubRoot: "/parent/my-hub", hubName: "my-hub", worksRoot: "/works" });
+    expect(resolveScanRoot(current, "base")).toEqual({ root: "/works/base", relBase: "/works" });
+>>>>>>> a5cd4f1 (scan: cover hub-hosted base/projects repos in apps registry)
   });
 });
 
@@ -54,7 +89,11 @@ describe("resolveLayout", () => {
     const hub = resolve(import.meta.dir, "../../../..");
     const current = resolveLayout(hub);
     expect(current.hubRoot).toBe(hub);
+<<<<<<< HEAD
     expect(current.hubScanDirs).toEqual(["base"]);
+=======
+    expect(current.hubName).toBe("innate-spark");
+>>>>>>> a5cd4f1 (scan: cover hub-hosted base/projects repos in apps registry)
     expect(current.worksRoot).toBe(resolve(hub, "../innate-works"));
     expect(current.appsRoot).toBe(resolve(hub, "../innate-apps"));
     expect(current.appsPrefix).toBe("innate-apps");

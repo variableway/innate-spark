@@ -17,6 +17,8 @@ refsRegistry: registry.yaml
 scanDirs:
   - innate-apps
   - skills
+  - innate-spark/base
+  - innate-spark/projects
 refsScanDirs:
   - skills
   - base
@@ -26,7 +28,10 @@ sectionSecondOnly:
   - innate-apps
 sectionKeepPrefix:
   - references
+  - innate-spark
 defaultDescBySection:
+  innate-spark/base: Hub-hosted shared base projects
+  innate-spark/projects: Hub-hosted product projects
   references/content: Content creation reference projects
   references/docs: Documentation reference projects
   references/fe: Frontend reference projects
