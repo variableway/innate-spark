@@ -3,3 +3,53 @@
 # innate-registry-cli clone reads this file and clones each project into its path field
 
 projects:
+  # === innate-chaos ===
+  - name: innate-chaos
+    repo: https://github.com/variableway/innate-chaos.git
+    path: innate-apps/innate-chaos
+
+  - name: innate-ai-industry
+    repo: https://github.com/qdriven/innate-ai-industry.git
+    path: innate-apps/innate-chaos/innate-ai-industry
+
+  # === skills ===
+  - name: devops-skill
+    repo: https://github.com/qdriven/devops-skill.git
+    path: skills/devops-skill
+    desc: Companion skill collections
+
+  - name: figures-skill
+    repo: https://github.com/qdriven/figures-skill.git
+    path: skills/figures-skill
+    desc: Companion skill collections
+
+  - name: fin-skills
+    repo: https://github.com/qdriven/fin-skills.git
+    path: skills/fin-skills
+    desc: Companion skill collections
+
+  - name: fire-skills
+    repo: https://github.com/variableway/fire-skills.git
+    path: skills/fire-skills
+    desc: Companion skill collections
+
+  - name: presentation-skills
+    repo: https://github.com/qdriven/presentation-skills.git
+    path: skills/presentation-skills
+    desc: Companion skill collections
+
+  - name: sdlc-skills
+    repo: https://github.com/qdriven/sdlc-skills.git
+    path: skills/sdlc-skills
+    desc: Companion skill collections
+
+  - name: wip-skills
+    repo: https://github.com/qdriven/wip-skills.git
+    path: skills/wip-skills
+    desc: Companion skill collections
+
+  # === base ===
+  - name: innate-backend
+    repo: https://github.com/variableway/innate-backend.git
+    path: base/innate-backend
+    desc: Innate base/template projects

@@ -6,6 +6,7 @@ import type { RuntimeLayout } from "./types.ts";
 function layout(partial: Partial<RuntimeLayout>): RuntimeLayout {
   return {
     hubRoot: "/hub",
+    hubScanDirs: [],
     worksRoot: "/works",
     appsRoot: "/works",
     appsPrefix: "",
@@ -32,6 +33,20 @@ describe("resolveOnDisk", () => {
     expect(resolveOnDisk(current, "my-apps")).toBe("/elsewhere/apps");
     expect(resolveOnDisk(current, "base/x")).toBe("/works/base/x");
   });
+
+  test("maps hubScanDirs onto hubRoot before worksRoot", () => {
+    const current = layout({
+      hubRoot: "/hub",
+      hubScanDirs: ["base"],
+      worksRoot: "/works",
+      appsRoot: "/elsewhere/apps",
+      appsPrefix: "innate-apps",
+    });
+    expect(resolveOnDisk(current, "base/innate-backend")).toBe("/hub/base/innate-backend");
+    expect(resolveOnDisk(current, "base")).toBe("/hub/base");
+    expect(resolveOnDisk(current, "skills/foo")).toBe("/works/skills/foo");
+    expect(resolveOnDisk(current, "innate-apps/bar")).toBe("/elsewhere/apps/bar");
+  });
 });
 
 describe("resolveLayout", () => {
@@ -39,9 +54,11 @@ describe("resolveLayout", () => {
     const hub = resolve(import.meta.dir, "../../../..");
     const current = resolveLayout(hub);
     expect(current.hubRoot).toBe(hub);
+    expect(current.hubScanDirs).toEqual(["base"]);
     expect(current.worksRoot).toBe(resolve(hub, "../innate-works"));
     expect(current.appsRoot).toBe(resolve(hub, "../innate-apps"));
     expect(current.appsPrefix).toBe("innate-apps");
+    expect(current.scanDirs).toEqual(["innate-apps", "skills"]);
     expect(current.registry).toBe(resolve(hub, "tools/registry/apps.yaml"));
   });
 

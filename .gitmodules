@@ -1,0 +1,6 @@
+[submodule "base/innate-backend"]
+	path = base/innate-backend
+	url = https://github.com/variableway/innate-backend.git
+[submodule "base/innate-fe-base"]
+	path = base/innate-fe-base
+	url = https://github.com/variableway/innate-fe-templates.git

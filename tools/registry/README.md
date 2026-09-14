@@ -12,7 +12,7 @@
 
 | 文件 | 同步方向 | 内容 |
 |------|----------|------|
-| `apps.yaml` | scan 同步（目录为源）+ 手工扩展字段 | app / base / 外部克隆的登记（扫描 `innate-apps/`、`base/`、`skills/`） |
+| `apps.yaml` | scan 同步（目录为源）+ 手工扩展字段 | app / base / 外部克隆的登记（hub：`base/`；外部：`innate-apps/`、`skills/`） |
 | `plugins.yaml` | 纯手工 | 双轨插件清单（package / iframe） |
 | `skills.yaml` | 纯手工 | Agent skill 分层清单（repo / user） |
 | `deploy.yaml` | 纯手工 | app → 部署目标映射 |

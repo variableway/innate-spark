@@ -67,11 +67,29 @@ function findNamedDir(start: string, name: string): string {
   return "";
 }
 
+function matchesPrefix(relPath: string, prefix: string): boolean {
+  return relPath === prefix || relPath.startsWith(`${prefix}/`);
+}
+
+function underPrefix(root: string, prefix: string, relPath: string): string {
+  const rest = relPath === prefix ? "" : relPath.slice(prefix.length + 1);
+  return rest ? join(root, rest) : root;
+}
+
+/** True when `name` is a configured hub scan dir (current-dir scannable object). */
+export function isHubScanDir(layout: RuntimeLayout, name: string): boolean {
+  return layout.hubScanDirs.includes(name);
+}
+
 export function resolveOnDisk(layout: RuntimeLayout, relPath: string): string {
-  const prefix = layout.appsPrefix;
-  if (prefix && (relPath === prefix || relPath.startsWith(`${prefix}/`))) {
-    const rest = relPath === prefix ? "" : relPath.slice(prefix.length + 1);
-    return rest ? join(layout.appsRoot, rest) : layout.appsRoot;
+  const appsPrefix = layout.appsPrefix;
+  if (appsPrefix && matchesPrefix(relPath, appsPrefix)) {
+    return underPrefix(layout.appsRoot, appsPrefix, relPath);
+  }
+  for (const hubDir of layout.hubScanDirs) {
+    if (matchesPrefix(relPath, hubDir)) {
+      return join(layout.hubRoot, relPath);
+    }
   }
   return join(layout.worksRoot, relPath);
 }
@@ -79,6 +97,9 @@ export function resolveOnDisk(layout: RuntimeLayout, relPath: string): string {
 export function resolveScanRoot(layout: RuntimeLayout, name: string): { root: string; relBase: string } {
   if (layout.appsPrefix && name === layout.appsPrefix) {
     return { root: layout.appsRoot, relBase: dirname(layout.appsRoot) };
+  }
+  if (isHubScanDir(layout, name)) {
+    return { root: join(layout.hubRoot, name), relBase: layout.hubRoot };
   }
   return { root: resolveOnDisk(layout, name), relBase: layout.worksRoot };
 }
@@ -123,6 +144,7 @@ export function resolveLayout(cwd = process.cwd(), overrides: LayoutOverrides = 
 
   return {
     hubRoot,
+    hubScanDirs: file.hubScanDirs ?? [],
     worksRoot,
     appsRoot,
     appsPrefix,

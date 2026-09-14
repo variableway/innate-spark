@@ -1,0 +1,26 @@
+# Hub base registry（落点：本仓 base/）
+# clone / scan 时必须加：--works-root .
+# 与 apps.yaml 分开：默认 worksRoot 是 ../innate-works，不能用来更新 hub 的 base/
+
+projects:
+  # === base ===
+  - name: innate-backend
+    repo: https://github.com/variableway/innate-backend.git
+    path: base/innate-backend
+    kind: base
+    desc: Go 后端基座（innate-go CLI、backend-go skill、scripts）
+
+  - name: innate-fe-base
+    repo: https://github.com/variableway/innate-fe-templates.git
+    path: base/innate-fe-base
+    kind: base
+    publishes:
+      - "@innate/ui"
+      - "@innate/admin-composites"
+      - "@innate/scene-catalog"
+      - "@innate/scene-specs"
+      - "@innate/scene-mocks"
+      - "@innate/agent-ui"
+      - "@innate/fe-skillkits"
+      - "@innate/tsconfig"
+    desc: 前端基座 monorepo（@innate/* 包与 Admin 模板）

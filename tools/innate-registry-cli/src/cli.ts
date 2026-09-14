@@ -115,9 +115,11 @@ async function main(): Promise<number> {
     }
 
     if (cmd === "scan") {
-      const dirs = positional.length ? positional : layout.scanDirs;
+      const dirs = positional.length ? positional : [...layout.hubScanDirs, ...layout.scanDirs];
       if (!dirs.length) {
-        console.error("[ERROR] no scan dirs: pass them as arguments or set scanDirs in config");
+        console.error(
+          "[ERROR] no scan dirs: pass them as arguments or set hubScanDirs / scanDirs in config",
+        );
         return 1;
       }
       await runScan({

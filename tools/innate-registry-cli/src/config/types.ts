@@ -1,11 +1,14 @@
 export type FileConfig = {
   hubRoot?: string;
+  /** Dirs under hubRoot to scan into the hub registry (current-dir scannable object). */
+  hubScanDirs?: string[];
   worksRoot?: string;
   worksName?: string;
   appsRoot?: string;
   appsPrefix?: string;
   registry?: string;
   refsRegistry?: string;
+  /** Dirs under worksRoot / appsRoot to scan into the hub registry (external scannable object). */
   scanDirs?: string[];
   refsScanDirs?: string[];
   sectionSecondOnly?: string[];
@@ -26,6 +29,7 @@ export type LayoutOverrides = {
 
 export type RuntimeLayout = {
   hubRoot: string;
+  hubScanDirs: string[];
   worksRoot: string;
   appsRoot: string;
   appsPrefix: string;
