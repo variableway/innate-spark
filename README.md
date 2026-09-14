@@ -29,6 +29,10 @@
    - Tutorials: Learning By Practices
    - Different Tutorials from Kids to Adult
 
+## Base
+
+- [base/innate-backend](base/innate-backend/) — Go 后端基座：`innate-go` CLI、meta / Vine REST 样例、backend-go 与 npm-registry skills（2026-09 自 `innate-workspace` 迁入）；用法见 [base/innate-backend/docs/](base/innate-backend/docs/)
+
 ## Tools
 
 索引见 [tools/README.md](tools/README.md)。

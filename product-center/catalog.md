@@ -10,3 +10,4 @@
 | --- | --- | --- | --- | --- |
 | registry-cli | innate-registry-cli | building | [../tools/innate-registry-cli/](../tools/innate-registry-cli/) | 本仓 `tools/innate-registry-cli`（Bun，可 compile 成 binary） |
 | selfhost-cli | innate-selfhost-cli | building | [../tools/innate-selfhost-cli/](../tools/innate-selfhost-cli/) | 本仓 `tools/innate-selfhost-cli`（macOS 自建 SMB 挂载） |
+| innate-backend | innate-backend | building | [../base/innate-backend/](../base/innate-backend/) | 本仓 `base/innate-backend`（Go 后端基座：innate-go CLI + backend-go / npm-registry skills；2026-09 自 `innate-workspace` 迁入） |

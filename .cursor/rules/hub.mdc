@@ -7,7 +7,7 @@ alwaysApply: true
 
 This Cursor project is a documentation hub, not an implementation repo.
 
-- Do not add product, infra, or collector source code, app manifests (`package.json`, `go.mod`, etc.), or dependency trees in this repository — except CLIs under `tools/innate-registry-cli/` and `tools/innate-selfhost-cli/`.
+- Do not add product, infra, or collector source code, app manifests (`package.json`, `go.mod`, etc.), or dependency trees in this repository — except CLIs under `tools/innate-registry-cli/` and `tools/innate-selfhost-cli/`, and shared base projects under `base/`.
 - `product-center/catalog.md` is the only product list. Create or rename a product there first, then scaffold `product-center/products/<slug>/`.
 - Implementation paths belong in that product’s `links.md`, not copied through many notes.
 - New captures: `docs/inbox/` if unsorted; domain `idea/` if the domain is clear; `docs/idea/` only for cross-domain analysis.
