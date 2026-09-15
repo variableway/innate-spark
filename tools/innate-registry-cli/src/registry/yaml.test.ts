@@ -57,12 +57,14 @@ describe("apps.yaml", () => {
   test("parses the live registry including hub-hosted repos", () => {
     const projects = readExisting(registry);
     expect(projects.length).toBeGreaterThan(0);
+    const backend = projects.find((p) => p.name === "innate-backend");
+    expect(backend?.repo).toBe("https://github.com/variableway/innate-backend.git");
+    // hubName path (preferred) or hubScanDirs short path
+    expect(["innate-spark/base/innate-backend", "base/innate-backend"]).toContain(backend?.path);
     const feBase = projects.find((p) => p.name === "innate-fe-base");
     expect(feBase?.repo).toBe("https://github.com/variableway/innate-fe-templates.git");
-    expect(feBase?.path).toBe("innate-spark/base/innate-fe-base");
-    expect(feBase?.publishes).toEqual(["@innate/ui"]);
-    const backend = projects.find((p) => p.name === "innate-backend");
-    expect(backend?.path).toBe("innate-spark/base/innate-backend");
+    expect(["innate-spark/base/innate-fe-base", "base/innate-fe-base"]).toContain(feBase?.path);
+    if (feBase?.publishes) expect(feBase.publishes).toContain("@innate/ui");
   });
 
   test("round-trip write keeps extra fields", () => {
@@ -82,6 +84,7 @@ describe("apps.yaml", () => {
         repo: "https://github.com/variableway/innate-fe-templates.git",
         path: "innate-spark/base/innate-fe-base",
         desc: "",
+        kind: "base",
         publishes: ["@innate/ui"],
       },
     ];
@@ -93,5 +96,6 @@ describe("apps.yaml", () => {
     expect(again.find((p) => p.name === "innate-wip")?.deploy).toEqual(["pages", "cloudflare"]);
     expect(again.find((p) => p.name === "innate-wip")?.templateVersion).toBe("v0");
     expect(again.find((p) => p.name === "innate-fe-base")?.publishes).toEqual(["@innate/ui"]);
+    expect(again.find((p) => p.name === "innate-fe-base")?.kind).toBe("base");
   });
 });

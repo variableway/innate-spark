@@ -1,6 +1,6 @@
-# Hub base registry（落点：本仓 base/）
-# clone / scan 时必须加：--works-root .
-# 与 apps.yaml 分开：默认 worksRoot 是 ../innate-works，不能用来更新 hub 的 base/
+# Hub base registry（落点：本仓 base/，靠 hubScanDirs）
+# 日常也可写在 apps.yaml；本表用于「只更新 base」：
+#   bun tools/innate-registry-cli/src/cli.ts clone --registry tools/registry/base.yaml
 
 projects:
   # === base ===

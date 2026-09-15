@@ -85,6 +85,12 @@ export function resolveScanRoot(layout: RuntimeLayout, name: string): { root: st
   if (layout.appsPrefix && name === layout.appsPrefix) {
     return { root: layout.appsRoot, relBase: dirname(layout.appsRoot) };
   }
+<<<<<<< HEAD
+=======
+  if (isHubScanDir(layout, name)) {
+    return { root: join(layout.hubRoot, name), relBase: layout.hubRoot };
+  }
+>>>>>>> 4070f9c (update registry)
   if (layout.hubName && (name === layout.hubName || name.startsWith(`${layout.hubName}/`))) {
     const rest = name === layout.hubName ? "" : name.slice(layout.hubName.length + 1);
     return { root: rest ? join(layout.hubRoot, rest) : layout.hubRoot, relBase: dirname(layout.hubRoot) };
@@ -132,7 +138,12 @@ export function resolveLayout(cwd = process.cwd(), overrides: LayoutOverrides = 
 
   return {
     hubRoot,
+<<<<<<< HEAD
     hubName: basename(hubRoot),
+=======
+    hubScanDirs: file.hubScanDirs ?? [],
+    hubName: file.hubName || basename(hubRoot),
+>>>>>>> 4070f9c (update registry)
     worksRoot,
     appsRoot,
     appsPrefix,

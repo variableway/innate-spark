@@ -26,7 +26,7 @@ bun tools/innate-registry-cli/src/cli.ts scan
 ==> Wrote /Users/you/innate/workspace/tools/registry/apps.yaml, total 28 projects (...)
 ```
 
-**结果：** `tools/registry/apps.yaml` 被重写。旧条目的 `kind: app` 等还在。只扫配置里的 `scanDirs`，默认是 `innate-apps`、`base`、`skills`。
+**结果：** `tools/registry/apps.yaml` 被重写。旧条目的 `kind: app` 等还在。默认扫 `hubScanDirs`（`base`）+ `scanDirs`（`innate-apps`、`skills`）。hub `base/` 细节见 [UC-11](./uc-11-update-hub-base.md)。
 
 只扫一层目录时：
 

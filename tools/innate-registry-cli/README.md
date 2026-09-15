@@ -41,5 +41,8 @@ src/
 
 ```bash
 bun tools/innate-registry-cli/src/cli.ts scan
+bun tools/innate-registry-cli/src/cli.ts clone --registry tools/registry/base.yaml  # hub base only
 cd tools/innate-registry-cli && bun test
 ```
+
+hub `base/` 完整流程见 [UC-11](../docs/uc-11-update-hub-base.md)。`hubScanDirs` 让默认 `clone` 也会更新本仓 `base/`。

@@ -6,6 +6,10 @@ import type { RuntimeLayout } from "./types.ts";
 function layout(partial: Partial<RuntimeLayout>): RuntimeLayout {
   return {
     hubRoot: "/hub",
+<<<<<<< HEAD
+=======
+    hubScanDirs: [],
+>>>>>>> 4070f9c (update registry)
     hubName: "",
     worksRoot: "/works",
     appsRoot: "/works",
@@ -34,6 +38,23 @@ describe("resolveOnDisk", () => {
     expect(resolveOnDisk(current, "base/x")).toBe("/works/base/x");
   });
 
+<<<<<<< HEAD
+=======
+  test("maps hubScanDirs onto hubRoot before worksRoot", () => {
+    const current = layout({
+      hubRoot: "/hub",
+      hubScanDirs: ["base"],
+      worksRoot: "/works",
+      appsRoot: "/elsewhere/apps",
+      appsPrefix: "innate-apps",
+    });
+    expect(resolveOnDisk(current, "base/innate-backend")).toBe("/hub/base/innate-backend");
+    expect(resolveOnDisk(current, "base")).toBe("/hub/base");
+    expect(resolveOnDisk(current, "skills/foo")).toBe("/works/skills/foo");
+    expect(resolveOnDisk(current, "innate-apps/bar")).toBe("/elsewhere/apps/bar");
+  });
+
+>>>>>>> 4070f9c (update registry)
   test("maps hubName paths onto hubRoot", () => {
     const current = layout({ hubRoot: "/hub", hubName: "my-hub", worksRoot: "/works" });
     expect(resolveOnDisk(current, "my-hub/base/x")).toBe("/hub/base/x");
@@ -62,6 +83,19 @@ describe("resolveScanRoot", () => {
   test("keeps plain dirs on worksRoot", () => {
     const current = layout({ hubRoot: "/parent/my-hub", hubName: "my-hub", worksRoot: "/works" });
     expect(resolveScanRoot(current, "base")).toEqual({ root: "/works/base", relBase: "/works" });
+<<<<<<< HEAD
+=======
+  });
+
+  test("routes hubScanDirs onto hubRoot", () => {
+    const current = layout({
+      hubRoot: "/hub",
+      hubScanDirs: ["base"],
+      hubName: "innate-spark",
+      worksRoot: "/works",
+    });
+    expect(resolveScanRoot(current, "base")).toEqual({ root: "/hub/base", relBase: "/hub" });
+>>>>>>> 4070f9c (update registry)
   });
 });
 
@@ -70,10 +104,18 @@ describe("resolveLayout", () => {
     const hub = resolve(import.meta.dir, "../../../..");
     const current = resolveLayout(hub);
     expect(current.hubRoot).toBe(hub);
+<<<<<<< HEAD
+=======
+    expect(current.hubScanDirs).toEqual(["base"]);
+>>>>>>> 4070f9c (update registry)
     expect(current.hubName).toBe("innate-spark");
     expect(current.worksRoot).toBe(resolve(hub, "../innate-works"));
     expect(current.appsRoot).toBe(resolve(hub, "../innate-apps"));
     expect(current.appsPrefix).toBe("innate-apps");
+<<<<<<< HEAD
+=======
+    expect(current.scanDirs).toEqual(["innate-apps", "skills", "innate-spark/base", "innate-spark/projects"]);
+>>>>>>> 4070f9c (update registry)
     expect(current.registry).toBe(resolve(hub, "tools/registry/apps.yaml"));
   });
 

@@ -10,11 +10,19 @@
 tools/
   README.md                 # 本页
   docs/                     # 按 use case 写的用法（带例子）
+<<<<<<< HEAD
   registry/                 # 四张登记表（数据）
   fire-skills/              # skill-spark：多子命令 CLI + skill 工作区
   innate-registry-cli/      # 旧 CLI（已合并进 skill-spark registry，仅作参考）
   innate-selfhost-cli/      # 旧 CLI（已合并进 skill-spark selfhost，仅作参考）
   pre-commit.sh             # 提交前跑 skill-spark registry scan
+=======
+  registry/                 # 登记表（apps / base / plugins / skills / deploy）
+  innate-registry-cli/      # 扫仓 / 合并 YAML / clone
+  innate-selfhost-cli/      # macOS 挂自建 SMB
+  pre-commit.sh             # 提交前跑 registry scan
+  bin/                      # compile 产物（不入库）
+>>>>>>> 4070f9c (update registry)
 ```
 
 用法按场景写在 [docs/](./docs/README.md)。命令字段见 [fire-skills/docs/cli/](./fire-skills/docs/cli/cli-commands.md)。
@@ -22,11 +30,18 @@ tools/
 | 路径 | 作用 | 说明 |
 | --- | --- | --- |
 | [docs/](./docs/README.md) | Use cases | 带例子的操作说明 |
+<<<<<<< HEAD
 | [registry/](./registry/) | Innate 登记表 | `apps.yaml` / `plugins.yaml` / `skills.yaml` / `deploy.yaml` |
 | [fire-skills/](./fire-skills/) | `skill-spark` | 多子命令 CLI：skill 管理 + `registry` 扫 git 仓/写登记表/按表 clone + `selfhost` 挂载/卸载自建 SMB（懒猫等） |
 | [innate-registry-cli/](./innate-registry-cli/) | 旧 `innate-registry-cli` | 已合并进 `skill-spark registry`，仅作参考保留 |
 | [innate-selfhost-cli/](./innate-selfhost-cli/) | 旧 `innate-selfhost-cli` | 已合并进 `skill-spark selfhost`，仅作参考保留 |
 | [pre-commit.sh](./pre-commit.sh) | git hook | `registry scan` 后 stage `registry/apps.yaml` |
+=======
+| [registry/](./registry/) | Innate 登记表 | `apps.yaml` / `base.yaml` / `plugins.yaml` / `skills.yaml` / `deploy.yaml` |
+| [innate-registry-cli/](./innate-registry-cli/) | `innate-registry-cli` | 扫 git 仓、写登记表、按表 clone |
+| [innate-selfhost-cli/](./innate-selfhost-cli/) | `innate-selfhost-cli` | 挂载 / 卸载自建 SMB（懒猫等） |
+| [pre-commit.sh](./pre-commit.sh) | git hook | `scan` 后 stage `registry/apps.yaml` |
+>>>>>>> 4070f9c (update registry)
 
 兄弟仓 `innate-works/registry.yaml`（references）仍在原处，用 `skill-spark registry scan-refs` / `clone-refs`。
 
@@ -39,7 +54,15 @@ tools/
 布局写在仓库根 `.innate-registry-cli.yaml`，不写死在代码里。
 
 ```bash
+<<<<<<< HEAD
 SPARK="bun tools/fire-skills/packages/skill-cli/src/index.ts"
+=======
+bun tools/innate-registry-cli/src/cli.ts scan          # → tools/registry/apps.yaml
+bun tools/innate-registry-cli/src/cli.ts clone
+bun tools/innate-registry-cli/src/cli.ts clone --registry tools/registry/base.yaml  # hub base only
+bun tools/innate-registry-cli/src/cli.ts scan-refs     # → innate-works/registry.yaml
+bun tools/innate-registry-cli/src/cli.ts clone-refs
+>>>>>>> 4070f9c (update registry)
 
 $SPARK registry scan          # → tools/registry/apps.yaml
 $SPARK registry clone

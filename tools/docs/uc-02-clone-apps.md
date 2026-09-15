@@ -24,7 +24,7 @@ bun tools/innate-registry-cli/src/cli.ts clone
 ==> Done: cloned 1, updated 0, skipped/up-to-date 1, failed 0
 ```
 
-**结果：** `innate-apps/...` 前缀落到 `appsRoot`；`base/`、`skills/` 落到 `worksRoot`。工作区脏或无法快进时会跳过并打印警告，不会强推。
+**结果：** `innate-apps/...` 前缀落到 `appsRoot`；`skills/` 落到 `worksRoot`；`base/` 落到 **hub**（`hubScanDirs`）。工作区脏或无法快进时会跳过并打印警告，不会强推。只更新 base 见 [UC-11](./uc-11-update-hub-base.md)。
 
 指定另一份表：
 

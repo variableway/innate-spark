@@ -1,5 +1,12 @@
 export type FileConfig = {
   hubRoot?: string;
+<<<<<<< HEAD
+=======
+  /** Logical hub name for `<hubName>/...` registry paths (defaults to basename of hubRoot). */
+  hubName?: string;
+  /** Dirs under hubRoot to scan into the hub registry (current-dir scannable object). */
+  hubScanDirs?: string[];
+>>>>>>> 4070f9c (update registry)
   worksRoot?: string;
   worksName?: string;
   appsRoot?: string;
@@ -27,6 +34,11 @@ export type LayoutOverrides = {
 
 export type RuntimeLayout = {
   hubRoot: string;
+<<<<<<< HEAD
+=======
+  hubScanDirs: string[];
+  /** Basename of hubRoot; `innate-spark/...` registry paths map back into the hub. */
+>>>>>>> 4070f9c (update registry)
   hubName: string;
   worksRoot: string;
   appsRoot: string;

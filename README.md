@@ -31,7 +31,18 @@
 
 ## Base
 
-- [base/innate-backend](base/innate-backend/) — Go 后端基座：`innate-go` CLI、meta / Vine REST 样例、backend-go 与 npm-registry skills（2026-09 自 `innate-workspace` 迁入）；用法见 [base/innate-backend/docs/](base/innate-backend/docs/)
+本仓 `base/` 下两个 git submodule（`hubScanDirs` → 本仓；登记见 `apps.yaml` / `base.yaml`）。日常更新：
+
+```bash
+bun tools/innate-registry-cli/src/cli.ts clone
+# 或只更新 base：
+bun tools/innate-registry-cli/src/cli.ts clone --registry tools/registry/base.yaml
+```
+
+详见 [UC-11](tools/docs/uc-11-update-hub-base.md)。
+
+- [base/innate-backend](base/innate-backend/) — Go 后端基座：`innate-go` CLI、meta / Vine REST 样例、backend-go skill（远程 `variableway/innate-backend`）
+- [base/innate-fe-base](base/innate-fe-base/) — 前端基座 monorepo：`@innate/*` 包与 Admin 模板（远程 `variableway/innate-fe-templates`）
 
 ## Tools
 

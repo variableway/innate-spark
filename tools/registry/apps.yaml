@@ -4,6 +4,7 @@
 
 projects:
   # === base ===
+<<<<<<< HEAD
   - name: flock
     repo: https://github.com/Onelevenvy/flock.git
     path: base/references/desktop-ref/flock
@@ -28,6 +29,37 @@ projects:
     repo: https://github.com/ianlewis/repo-template-ts.git
     path: base/references/templates-repo/repo-template-ts
     desc: Innate base/template projects
+=======
+  - name: innate-backend
+    repo: https://github.com/variableway/innate-backend.git
+    path: base/innate-backend
+    kind: base
+    desc: Go 后端基座（innate-go CLI、backend-go skill、scripts）
+
+  - name: innate-fe-base
+    repo: https://github.com/variableway/innate-fe-templates.git
+    path: base/innate-fe-base
+    kind: base
+    publishes:
+      - "@innate/ui"
+      - "@innate/admin-composites"
+      - "@innate/scene-catalog"
+      - "@innate/scene-specs"
+      - "@innate/scene-mocks"
+      - "@innate/agent-ui"
+      - "@innate/fe-skillkits"
+      - "@innate/tsconfig"
+    desc: 前端基座 monorepo（@innate/* 包与 Admin 模板）
+
+  # === innate-chaos ===
+  - name: innate-chaos
+    repo: https://github.com/variableway/innate-chaos.git
+    path: innate-apps/innate-chaos
+
+  - name: innate-ai-industry
+    repo: https://github.com/qdriven/innate-ai-industry.git
+    path: innate-apps/innate-chaos/innate-ai-industry
+>>>>>>> 4070f9c (update registry)
 
   # === skills ===
   - name: devops-skill
@@ -40,6 +72,7 @@ projects:
     path: skills/figures-skill
     desc: Companion skill collections
 
+<<<<<<< HEAD
   - name: andrej-karpathy-skills
     repo: https://github.com/multica-ai/andrej-karpathy-skills.git
     path: skills/figures-skill/andrej-karpathy-skills
@@ -100,11 +133,14 @@ projects:
     path: skills/figures-skill/zhangxuefeng-skill
     desc: Companion skill collections
 
+=======
+>>>>>>> 4070f9c (update registry)
   - name: fin-skills
     repo: https://github.com/qdriven/fin-skills.git
     path: skills/fin-skills
     desc: Companion skill collections
 
+<<<<<<< HEAD
   - name: OpenTrade
     repo: https://github.com/OpenTradeOSS/OpenTrade.git
     path: skills/fin-skills/OpenTrade
@@ -128,6 +164,11 @@ projects:
   - name: nautilus_trader
     repo: https://github.com/nautechsystems/nautilus_trader.git
     path: skills/fin-skills/nautilus_trader
+=======
+  - name: fire-skills
+    repo: https://github.com/variableway/fire-skills.git
+    path: skills/fire-skills
+>>>>>>> 4070f9c (update registry)
     desc: Companion skill collections
 
   - name: presentation-skills
@@ -135,6 +176,7 @@ projects:
     path: skills/presentation-skills
     desc: Companion skill collections
 
+<<<<<<< HEAD
   - name: baoyu-design
     repo: https://github.com/JimLiu/baoyu-design.git
     path: skills/presentation-skills/baoyu-design
@@ -155,11 +197,14 @@ projects:
     path: skills/presentation-skills/speclip-skills
     desc: Companion skill collections
 
+=======
+>>>>>>> 4070f9c (update registry)
   - name: sdlc-skills
     repo: https://github.com/qdriven/sdlc-skills.git
     path: skills/sdlc-skills
     desc: Companion skill collections
 
+<<<<<<< HEAD
   - name: baoyu-skills-studio
     repo: https://github.com/luoianun/baoyu-skills-studio.git
     path: skills/sdlc-skills/baoyu-skills-studio
@@ -276,3 +321,9 @@ projects:
     path: innate-spark/base/innate-fe-base
     desc: Hub-hosted shared base projects
     publishes: ["@innate/ui"]
+=======
+  - name: wip-skills
+    repo: https://github.com/qdriven/wip-skills.git
+    path: skills/wip-skills
+    desc: Companion skill collections
+>>>>>>> 4070f9c (update registry)

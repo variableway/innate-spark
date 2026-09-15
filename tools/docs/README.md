@@ -19,8 +19,17 @@ HOST="$SPARK selfhost --config tools/fire-skills/config.json"
 | [UC-03 同步 references](./uc-03-scan-refs.md) | `registry` | 扫 `innate-works` 里的 skills / references |
 | [UC-04 目录没了但先留着条目](./uc-04-keep-missing.md) | `registry` | 仓搬走了，暂时不要从 YAML 删掉 |
 | [UC-05 提交前自动扫一遍](./uc-05-pre-commit.md) | pre-commit | 每次 commit 带上最新 `apps.yaml` |
+<<<<<<< HEAD
 | [UC-06 访达挂上懒猫盘](./uc-06-selfhost-open.md) | `selfhost` | 用钥匙串挂 SMB，再 `mv` 文件上去 |
 | [UC-10 懒猫盘查什么、挂上后怎么进](./uc-10-lazycat-where-to-look.md) | `selfhost` | 字段在懒猫哪一页抄；Mac 上盘在哪 |
 | [UC-07 终端直接 mount_smbfs](./uc-07-selfhost-smbfs.md) | `selfhost` | 不弹窗，挂到桌面文件夹 |
 | [UC-08 多套自建盘](./uc-08-selfhost-profiles.md) | `selfhost` | 家宽 NAS 和懒猫各一份 profile |
 | [UC-09 打成本机命令](./uc-09-build-binary.md) | `skill-spark` | compile 成 `tools/fire-skills/dist/skill-spark` |
+=======
+| [UC-06 访达挂上懒猫盘](./uc-06-selfhost-open.md) | selfhost-cli | 用钥匙串挂 SMB，再 `mv` 文件上去 |
+| [UC-10 懒猫盘查什么、挂上后怎么进](./uc-10-lazycat-where-to-look.md) | selfhost-cli | 字段在懒猫哪一页抄；Mac 上盘在哪 |
+| [UC-07 终端直接 mount_smbfs](./uc-07-selfhost-smbfs.md) | selfhost-cli | 不弹窗，挂到桌面文件夹 |
+| [UC-08 多套自建盘](./uc-08-selfhost-profiles.md) | selfhost-cli | 家宽 NAS 和懒猫各一份 profile |
+| [UC-09 打成本机命令](./uc-09-build-binary.md) | 两条 CLI | compile 成 `tools/bin/` 里的可执行文件 |
+| [UC-11 更新 hub 的 base 两个仓](./uc-11-update-hub-base.md) | registry-cli | `base/innate-backend` + `base/innate-fe-base`（`hubScanDirs`） |
+>>>>>>> 4070f9c (update registry)

@@ -18,7 +18,7 @@ git commit -m "Update registry CLI"
 **例子输出：**
 
 ```text
-[pre-commit] scanning innate-apps/ + base/ + skills/ -> tools/registry/apps.yaml
+[pre-commit] scanning hub base/ + innate-apps/ + skills/ -> tools/registry/apps.yaml
 ==> works /Users/you/innate/innate-works
 ...
 [pre-commit] tools/registry/apps.yaml updated and staged
