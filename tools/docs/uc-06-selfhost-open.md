@@ -4,7 +4,7 @@
 
 **先读 [UC-10](./uc-10-lazycat-where-to-look.md)：** `host` / `share` / `user` 从懒猫网盘 **我的 → 网络服务 → SMB** 抄；懒猫的 `share` 通常是**用户名**。挂上后用 `path` / `status` 或访达侧边栏进盘。
 
-**前置：** 编辑 [innate-selfhost-cli/config.json](../innate-selfhost-cli/config.json)，至少填好默认 profile 的 `host`、`user` 和 `share`：
+**前置：** 编辑 [fire-skills/config.json](../fire-skills/config.json)，至少填好默认 profile 的 `host`、`user` 和 `share`：
 
 ```json
 {
@@ -26,31 +26,31 @@
 **做法：**
 
 ```bash
-bun tools/innate-selfhost-cli/src/cli.ts profiles
-bun tools/innate-selfhost-cli/src/cli.ts open --profile lazycat
+$HOST profiles
+$HOST open --profile lazycat
 ```
 
 访达会弹出密码框。勾选「在钥匙串中记住」。挂上后：
 
 ```bash
-bun tools/innate-selfhost-cli/src/cli.ts status --profile lazycat
-bun tools/innate-selfhost-cli/src/cli.ts path --profile lazycat
+$HOST status --profile lazycat
+$HOST path --profile lazycat
 # 通常打印 /Volumes/share
 
-mv ~/Downloads/my_file.zip "$(bun tools/innate-selfhost-cli/src/cli.ts path --profile lazycat)/"
-mv ~/Documents/my_folder "$(bun tools/innate-selfhost-cli/src/cli.ts path --profile lazycat)/"
+mv ~/Downloads/my_file.zip "$($HOST path --profile lazycat)/"
+mv ~/Documents/my_folder "$($HOST path --profile lazycat)/"
 ```
 
 路径或文件名有空格时加引号：
 
 ```bash
-mv "/Users/you/Desktop/My Photo.jpg" "$(bun tools/innate-selfhost-cli/src/cli.ts path)/"
+mv "/Users/you/Desktop/My Photo.jpg" "$($HOST path)/"
 ```
 
 不用时：
 
 ```bash
-bun tools/innate-selfhost-cli/src/cli.ts umount --profile lazycat
+$HOST umount --profile lazycat
 ```
 
 **结果：** 盘出现在 `/Volumes/<share 最后一段>`。`via: open` 不走 `mount_smbfs`，也不需要环境变量。

@@ -41,7 +41,7 @@
 
 局域网优先用 IP（快）；人不在家再用 `file.xxx.heiyu.space`。两种可以做成两个 profile，见 [UC-08](./uc-08-selfhost-profiles.md)。
 
-抄完写入 [config.json](../innate-selfhost-cli/config.json)：
+抄完写入 [config.json](../fire-skills/config.json)：
 
 ```json
 {
@@ -61,7 +61,7 @@
 用 CLI 核对有没有填进当前 profile（不会显示密码）：
 
 ```bash
-bun tools/innate-selfhost-cli/src/cli.ts profiles
+$HOST profiles
 # * lazycat  admin@192.168.1.5/admin
 ```
 
@@ -72,7 +72,7 @@ bun tools/innate-selfhost-cli/src/cli.ts profiles
 先挂上（日常推荐访达，见 [UC-06](./uc-06-selfhost-open.md)）：
 
 ```bash
-bun tools/innate-selfhost-cli/src/cli.ts open --profile lazycat
+$HOST open --profile lazycat
 ```
 
 然后按下面查本地入口。
@@ -80,8 +80,8 @@ bun tools/innate-selfhost-cli/src/cli.ts open --profile lazycat
 ### 用本仓库 CLI（最先看）
 
 ```bash
-bun tools/innate-selfhost-cli/src/cli.ts status --profile lazycat
-bun tools/innate-selfhost-cli/src/cli.ts path --profile lazycat
+$HOST status --profile lazycat
+$HOST path --profile lazycat
 ```
 
 | 命令 | 查什么 |
@@ -90,8 +90,8 @@ bun tools/innate-selfhost-cli/src/cli.ts path --profile lazycat
 | `path` | 给 `cp` / `mv` 用的路径。`via: open` 一般是 `/Volumes/admin`（最后一段共享名）；`via: smbfs` 一般是 `~/Desktop/lazycat_disk` |
 
 ```bash
-ls "$(bun tools/innate-selfhost-cli/src/cli.ts path --profile lazycat)"
-mv ~/Downloads/notes.zip "$(bun tools/innate-selfhost-cli/src/cli.ts path --profile lazycat)/"
+ls "$($HOST path --profile lazycat)"
+mv ~/Downloads/notes.zip "$($HOST path --profile lazycat)/"
 ```
 
 ### 用访达
@@ -120,7 +120,7 @@ ls /Volumes
 若要进更深一层，路径接在 `path` 后面：
 
 ```bash
-DEST="$(bun tools/innate-selfhost-cli/src/cli.ts path --profile lazycat)"
+DEST="$($HOST path --profile lazycat)"
 ls "$DEST"
 mv ~/Downloads/clip.mp4 "$DEST/Movies/"
 ```

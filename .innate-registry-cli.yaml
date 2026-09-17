@@ -1,13 +1,4 @@
-# Two scannable objects:
-#   1) hub  — current directory (config file location / hubRoot)
-#   2) works/apps — external sibling trees
-# Other repos copy this file and change the values.
-
-# --- hub (current directory) ---
-hubScanDirs:
-  - base
-
-# --- external (works / apps) ---
+# Project layout for "skill-spark registry". Other repos copy this file and change the values.
 worksRoot: ../innate-works
 worksName: innate-works
 appsRoot: ../innate-apps
@@ -16,6 +7,7 @@ registry: tools/registry/apps.yaml
 refsRegistry: registry.yaml
 scanDirs:
   - innate-apps
+  - base
   - skills
   - innate-spark/base
   - innate-spark/projects

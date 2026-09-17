@@ -1,7 +1,5 @@
 export type FileConfig = {
   hubRoot?: string;
-  /** Dirs under hubRoot to scan into the hub registry (current-dir scannable object). */
-  hubScanDirs?: string[];
   worksRoot?: string;
   worksName?: string;
   appsRoot?: string;
@@ -29,11 +27,7 @@ export type LayoutOverrides = {
 
 export type RuntimeLayout = {
   hubRoot: string;
-<<<<<<< HEAD
-  hubScanDirs: string[];
-=======
   hubName: string;
->>>>>>> a5cd4f1 (scan: cover hub-hosted base/projects repos in apps registry)
   worksRoot: string;
   appsRoot: string;
   appsPrefix: string;

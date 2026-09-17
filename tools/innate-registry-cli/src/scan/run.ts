@@ -18,7 +18,6 @@ export async function runScan(opts: ScanOptions): Promise<void> {
     keepPrefix: layout.sectionKeepPrefix,
   };
   console.log(`==> hub   ${layout.hubRoot}`);
-  if (layout.hubScanDirs.length) console.log(`==> local ${layout.hubScanDirs.join(", ")}`);
   console.log(`==> works ${layout.worksRoot}`);
   if (layout.appsPrefix) console.log(`==> apps  ${layout.appsRoot} (${layout.appsPrefix})`);
   console.log(`==> file  ${opts.registry}`);

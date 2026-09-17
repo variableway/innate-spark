@@ -1,18 +1,8 @@
 # Project registry
-# Synced by innate-registry-cli scan: source of truth is actual dir contents; entries are added/moved/deleted and desc is preserved
-# innate-registry-cli clone reads this file and clones each project into its path field
+# Synced by skill-spark registry scan: source of truth is actual dir contents; entries are added/moved/deleted and desc is preserved
+# skill-spark registry clone reads this file and clones each project into its path field
 
 projects:
-<<<<<<< HEAD
-  # === innate-chaos ===
-  - name: innate-chaos
-    repo: https://github.com/variableway/innate-chaos.git
-    path: innate-apps/innate-chaos
-
-  - name: innate-ai-industry
-    repo: https://github.com/qdriven/innate-ai-industry.git
-    path: innate-apps/innate-chaos/innate-ai-industry
-=======
   # === base ===
   - name: flock
     repo: https://github.com/Onelevenvy/flock.git
@@ -38,7 +28,6 @@ projects:
     repo: https://github.com/ianlewis/repo-template-ts.git
     path: base/references/templates-repo/repo-template-ts
     desc: Innate base/template projects
->>>>>>> a5cd4f1 (scan: cover hub-hosted base/projects repos in apps registry)
 
   # === skills ===
   - name: devops-skill
@@ -51,8 +40,6 @@ projects:
     path: skills/figures-skill
     desc: Companion skill collections
 
-<<<<<<< HEAD
-=======
   - name: andrej-karpathy-skills
     repo: https://github.com/multica-ai/andrej-karpathy-skills.git
     path: skills/figures-skill/andrej-karpathy-skills
@@ -113,14 +100,11 @@ projects:
     path: skills/figures-skill/zhangxuefeng-skill
     desc: Companion skill collections
 
->>>>>>> a5cd4f1 (scan: cover hub-hosted base/projects repos in apps registry)
   - name: fin-skills
     repo: https://github.com/qdriven/fin-skills.git
     path: skills/fin-skills
     desc: Companion skill collections
 
-<<<<<<< HEAD
-=======
   - name: OpenTrade
     repo: https://github.com/OpenTradeOSS/OpenTrade.git
     path: skills/fin-skills/OpenTrade
@@ -146,47 +130,11 @@ projects:
     path: skills/fin-skills/nautilus_trader
     desc: Companion skill collections
 
->>>>>>> a5cd4f1 (scan: cover hub-hosted base/projects repos in apps registry)
-  - name: fire-skills
-    repo: https://github.com/variableway/fire-skills.git
-    path: skills/fire-skills
-    desc: Companion skill collections
-
-<<<<<<< HEAD
-=======
-  - name: LifeOS
-    repo: https://github.com/danielmiessler/LifeOS.git
-    path: skills/fire-skills/references/LifeOS
-    desc: Companion skill collections
-
-  - name: qling
-    repo: https://github.com/Zzy-min/qling.git
-    path: skills/fire-skills/references/qling
-    desc: Companion skill collections
-
-  - name: skill-deck
-    repo: https://github.com/Hccake/skill-deck.git
-    path: skills/fire-skills/references/skill-deck
-    desc: Companion skill collections
-
-  - name: skillkit
-    repo: https://github.com/robotbird/skillkit.git
-    path: skills/fire-skills/references/skillkit
-    desc: Companion skill collections
-
-  - name: skills
-    repo: https://github.com/Hccake/skills.git
-    path: skills/fire-skills/references/skills
-    desc: Companion skill collections
-
->>>>>>> a5cd4f1 (scan: cover hub-hosted base/projects repos in apps registry)
   - name: presentation-skills
     repo: https://github.com/qdriven/presentation-skills.git
     path: skills/presentation-skills
     desc: Companion skill collections
 
-<<<<<<< HEAD
-=======
   - name: baoyu-design
     repo: https://github.com/JimLiu/baoyu-design.git
     path: skills/presentation-skills/baoyu-design
@@ -207,24 +155,11 @@ projects:
     path: skills/presentation-skills/speclip-skills
     desc: Companion skill collections
 
->>>>>>> a5cd4f1 (scan: cover hub-hosted base/projects repos in apps registry)
   - name: sdlc-skills
     repo: https://github.com/qdriven/sdlc-skills.git
     path: skills/sdlc-skills
     desc: Companion skill collections
 
-<<<<<<< HEAD
-  - name: wip-skills
-    repo: https://github.com/qdriven/wip-skills.git
-    path: skills/wip-skills
-    desc: Companion skill collections
-
-  # === base ===
-  - name: innate-backend
-    repo: https://github.com/variableway/innate-backend.git
-    path: base/innate-backend
-    desc: Innate base/template projects
-=======
   - name: baoyu-skills-studio
     repo: https://github.com/luoianun/baoyu-skills-studio.git
     path: skills/sdlc-skills/baoyu-skills-studio
@@ -341,20 +276,3 @@ projects:
     path: innate-spark/base/innate-fe-base
     desc: Hub-hosted shared base projects
     publishes: ["@innate/ui"]
-
-  # === innate-spark/projects ===
-  - name: reset-from-zero
-    repo: https://github.com/variableway/reset-from-zero.git
-    path: innate-spark/projects/edu/reset-from-zero
-    desc: Hub-hosted product projects
-
-  - name: innate-executable
-    repo: https://github.com/variableway/innate-executable.git
-    path: innate-spark/projects/edu/reset-from-zero/innate-executable
-    desc: Hub-hosted product projects
-
-  - name: qdriven
-    repo: https://github.com/qdriven/qdriven.git
-    path: innate-spark/projects/profiles/qdriven
-    desc: Hub-hosted product projects
->>>>>>> a5cd4f1 (scan: cover hub-hosted base/projects repos in apps registry)

@@ -13,17 +13,17 @@ while [ -L "$SOURCE" ]; do
 done
 SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")" >/dev/null 2>&1 && pwd)"
 HUB_ROOT="$(dirname "$SCRIPT_DIR")"
-CLI="$HUB_ROOT/tools/innate-registry-cli/src/cli.ts"
-BIN="$HUB_ROOT/tools/bin/innate-registry-cli"
+CLI="$HUB_ROOT/tools/fire-skills/packages/skill-cli/src/index.ts"
+BIN="$HUB_ROOT/tools/fire-skills/dist/skill-spark"
 REGISTRY="tools/registry/apps.yaml"
 
 cd "$HUB_ROOT"
 
 echo "[pre-commit] scanning innate-apps/ + base/ + skills/ + innate-spark/{base,projects} -> $REGISTRY"
 if [ -x "$BIN" ]; then
-    "$BIN" scan
+    "$BIN" registry scan
 elif command -v bun >/dev/null 2>&1; then
-    bun "$CLI" scan
+    bun "$CLI" registry scan
 else
     echo "[pre-commit] bun not found and $BIN missing; skip scan" >&2
     exit 1

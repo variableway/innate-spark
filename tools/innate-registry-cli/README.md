@@ -13,7 +13,7 @@ src/
 
 | 命令 | 登记表 | 扫描目录 |
 | --- | --- | --- |
-| `scan` | 配置里的 `registry`（相对 hub） | 参数，或配置 `hubScanDirs` + `scanDirs` |
+| `scan` | 配置里的 `registry`（相对 hub） | 参数，或配置 `scanDirs` |
 | `clone` | 同上 | 按条目 `path` 落到 hub / works / apps |
 | `scan-refs` | 配置里的 `refsRegistry`（相对 works） | 参数，或配置 `refsScanDirs` |
 | `clone-refs` | 同上 | 同上 |
@@ -24,17 +24,16 @@ src/
 
 | 字段 / 参数 | 作用 |
 | --- | --- |
-| `hubScanDirs` | **当前目录**可扫描对象：相对 hub 的目录（如 `base`），写入 hub registry |
 | `worksRoot` / `--works-root` | **外部**可扫描对象根：克隆与 refs 扫描的根目录 |
 | `worksName` / `--works-name` | 未给 worksRoot 时，按目录名向上找 |
 | `appsRoot` / `--apps-root` | 已拆出去的 apps 树 |
 | `appsPrefix` / `--apps-prefix` | YAML 里映射到 appsRoot 的路径前缀 |
-| `scanDirs` | 外部可扫描对象：相对 works / apps 的目录 |
+| `scanDirs` | 可扫描目录：相对 hub（如 `base`）或相对 works / apps |
 | `registry` / `--registry` | hub 侧登记表 |
 | `sectionSecondOnly` / `sectionKeepPrefix` | 分组规则 |
 | `defaultDescBySection` | 新条目缺 desc 时的默认值 |
 
-`scan` 默认扫描 `hubScanDirs` + `scanDirs`。`path` 解析顺序：`appsPrefix` → `hubScanDirs` → `worksRoot`。
+`scan` 默认扫描 `scanDirs`。`path` 解析顺序：`appsPrefix` → hub 目录名（如 `innate-spark`）→ `worksRoot`。
 
 环境变量：`REGISTRY_CLI_HUB_ROOT`、`REGISTRY_CLI_WORKS_ROOT`、`REGISTRY_CLI_WORKS_NAME`、`REGISTRY_CLI_APPS_ROOT`。
 
