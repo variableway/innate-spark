@@ -13,8 +13,8 @@ while [ -L "$SOURCE" ]; do
 done
 SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")" >/dev/null 2>&1 && pwd)"
 HUB_ROOT="$(dirname "$SCRIPT_DIR")"
-CLI="$HUB_ROOT/tools/fire-skills/packages/skill-cli/src/index.ts"
-BIN="$HUB_ROOT/tools/fire-skills/dist/skill-spark"
+CLI="$HUB_ROOT/tools/innate-spark-cli/packages/skill-cli/src/index.ts"
+BIN="$HUB_ROOT/tools/innate-spark-cli/dist/skill-spark"
 REGISTRY="tools/registry/apps.yaml"
 
 cd "$HUB_ROOT"

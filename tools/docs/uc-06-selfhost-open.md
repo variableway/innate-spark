@@ -4,7 +4,7 @@
 
 **先读 [UC-10](./uc-10-lazycat-where-to-look.md)：** `host` / `share` / `user` 从懒猫网盘 **我的 → 网络服务 → SMB** 抄；懒猫的 `share` 通常是**用户名**。挂上后用 `path` / `status` 或访达侧边栏进盘。
 
-**前置：** 编辑 [fire-skills/config.json](../fire-skills/config.json)，至少填好默认 profile 的 `host`、`user` 和 `share`：
+**前置：** 编辑 [innate-spark-cli/config.json](../innate-spark-cli/config.json)，至少填好默认 profile 的 `host`、`user` 和 `share`：
 
 ```json
 {

@@ -5,13 +5,13 @@
 **做法：**
 
 ```bash
-bun tools/innate-registry-cli/src/cli.ts scan-refs
+$REG scan-refs
 ```
 
 拉齐这些仓：
 
 ```bash
-bun tools/innate-registry-cli/src/cli.ts clone-refs
+$REG clone-refs
 ```
 
 **例子：** 扫完后打开 `../innate-works/registry.yaml`，应能看到按 `references/fe` 这类小节分组的 `projects:` 列表。`clone-refs` 会按每条的 `path` 在 `worksRoot` 下 clone / pull。
@@ -20,5 +20,5 @@ bun tools/innate-registry-cli/src/cli.ts clone-refs
 
 | 命令 | 写哪 | 默认扫哪 |
 | --- | --- | --- |
-| `scan` / `clone` | `tools/registry/apps.yaml` | `scanDirs`（Innate 自己的 apps / base / skills） |
-| `scan-refs` / `clone-refs` | `innate-works/registry.yaml` | `refsScanDirs` |
+| `registry scan` / `registry clone` | `tools/registry/apps.yaml` | `scanDirs`（Innate 自己的 apps / base / skills） |
+| `registry scan-refs` / `registry clone-refs` | `innate-works/registry.yaml` | `refsScanDirs` |

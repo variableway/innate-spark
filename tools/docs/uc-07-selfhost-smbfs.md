@@ -18,7 +18,7 @@
 
 ```bash
 SELFHOST_CLI_PASSWORD='your-password' \
-  bun tools/innate-selfhost-cli/src/cli.ts mount --profile lazycat
+  $HOST mount --profile lazycat
 ```
 
 CLI 会 `mkdir -p` 挂载点，然后调用：
@@ -38,7 +38,7 @@ mv ~/Downloads/my_file.zip ~/Desktop/lazycat_disk/
 卸下：
 
 ```bash
-bun tools/innate-selfhost-cli/src/cli.ts umount --profile lazycat
+$HOST umount --profile lazycat
 ```
 
 **注意：** `SELFHOST_CLI_PASSWORD` 会出现在当前 shell 环境里。一次性使用可以：
@@ -46,7 +46,7 @@ bun tools/innate-selfhost-cli/src/cli.ts umount --profile lazycat
 ```bash
 read -s SELFHOST_CLI_PASSWORD
 export SELFHOST_CLI_PASSWORD
-bun tools/innate-selfhost-cli/src/cli.ts mount --profile lazycat
+$HOST mount --profile lazycat
 unset SELFHOST_CLI_PASSWORD
 ```
 

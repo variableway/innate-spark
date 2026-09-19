@@ -12,8 +12,7 @@
 
 | 文件 | 同步方向 | 内容 |
 |------|----------|------|
-| `apps.yaml` | scan 同步（目录为源）+ 手工扩展字段 | hub `base/`（`hubScanDirs`）+ `innate-apps/` + `skills/` |
-| `base.yaml` | 手工为主；可选单独 clone | 只含两个 base；`clone --registry tools/registry/base.yaml`，见 [UC-11](../docs/uc-11-update-hub-base.md) |
+| `apps.yaml` | scan 同步（目录为源）+ 手工扩展字段 | app / base / 外部克隆的登记（hub：`base/`；外部：`innate-apps/`、`skills/`） |
 | `plugins.yaml` | 纯手工 | 双轨插件清单（package / iframe） |
 | `skills.yaml` | 纯手工 | Agent skill 分层清单（repo / user） |
 | `deploy.yaml` | 纯手工 | app → 部署目标映射 |
@@ -38,12 +37,11 @@
 
 ### scan 的字段保留契约
 
-`innate-registry-cli scan`（`tools/innate-registry-cli`）的 read → merge → write 会**原样保留** `kind / template / deploy / publishes` 等扩展字段（含 `@` 开头的包名引号处理）。验收方式：跑 scan 后扩展字段不丢失、条目不重排。`--regenerate` 会丢弃全部扩展字段，慎用。
+`skill-spark registry scan`（`tools/innate-spark-cli`）的 read → merge → write 会**原样保留** `kind / template / deploy / publishes` 等扩展字段（含 `@` 开头的包名引号处理）。验收方式：跑 scan 后扩展字段不丢失、条目不重排。`--regenerate` 会丢弃全部扩展字段，慎用。
 
 同步命令：
 
 ```bash
-bun tools/innate-registry-cli/src/cli.ts scan          # 写本文件 apps.yaml（含 hub base）
-bun tools/innate-registry-cli/src/cli.ts clone         # apps + skills + hub base/
-bun tools/innate-registry-cli/src/cli.ts clone --registry tools/registry/base.yaml  # 只更新 base
+bun tools/innate-spark-cli/packages/skill-cli/src/index.ts registry scan          # 写本文件 apps.yaml
+bun tools/innate-spark-cli/packages/skill-cli/src/index.ts registry clone         # 按 path clone 到 innate-works
 ```

@@ -41,7 +41,7 @@
 
 局域网优先用 IP（快）；人不在家再用 `file.xxx.heiyu.space`。两种可以做成两个 profile，见 [UC-08](./uc-08-selfhost-profiles.md)。
 
-抄完写入 [config.json](../fire-skills/config.json)：
+抄完写入 [config.json](../innate-spark-cli/config.json)：
 
 ```json
 {

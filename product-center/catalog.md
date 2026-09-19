@@ -8,7 +8,6 @@
 
 | slug | 名称 | 阶段 | 文档 | 实现 |
 | --- | --- | --- | --- | --- |
-| registry-cli | innate-registry-cli | building | [../tools/innate-registry-cli/](../tools/innate-registry-cli/) | 本仓 `tools/innate-registry-cli`（Bun，可 compile 成 binary） |
-| selfhost-cli | innate-selfhost-cli | building | [../tools/innate-selfhost-cli/](../tools/innate-selfhost-cli/) | 本仓 `tools/innate-selfhost-cli`（macOS 自建 SMB 挂载） |
-| innate-backend | innate-backend | building | [../base/innate-backend/](../base/innate-backend/) | submodule `base/innate-backend`（远程 `variableway/innate-backend`；更新见 [UC-11](../tools/docs/uc-11-update-hub-base.md)） |
-| innate-fe-base | innate-fe-base | building | [../base/innate-fe-base/](../base/innate-fe-base/) | submodule `base/innate-fe-base`（远程 `variableway/innate-fe-templates`；更新见 [UC-11](../tools/docs/uc-11-update-hub-base.md)） |
+| skill-spark | skill-spark | building | [../tools/innate-spark-cli/](../tools/innate-spark-cli/) | 本仓 `tools/innate-spark-cli`（Bun 多子命令 CLI：skill 管理 + `registry` 扫仓/克隆 + `selfhost` 自建 SMB 挂载，`bun run build:exe` 打单文件 binary）。原 `innate-registry-cli` / `innate-selfhost-cli` 已合并进来 |
+| innate-backend | innate-backend | building | [../base/innate-backend/](../base/innate-backend/) | 本仓 `base/innate-backend`（Go 后端基座：innate-go CLI + backend-go / npm-registry skills；2026-09 自 `innate-workspace` 迁入） |
+| software-factory | Software Factory（Yorun QA / DSH 插件厂） | design | [./products/software-factory/](./products/software-factory/) | 见 [links.md](./products/software-factory/links.md) |

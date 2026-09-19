@@ -48,6 +48,18 @@ P0 地基修复        → P1 骨架与契约        → P2 双轨接入        
 | [T11 测试体系](tasks/T11-test-harness.md) | vitest 单测 + 翻 flag 验收 + playwright 冒烟 |
 | [T12 部署管线](tasks/T12-deploy-pipeline.md) | Pages / Cloudflare 双目标 workflow |
 
+### P4 — 内容插件扩展：innate-wip Blog 接入（计划中，未实施）
+
+> 决策（2026-09-17）：不要 iframe 双层壳 → **主线 = T14 → T15（domain 原生渲染，webshell 壳唯一）**；
+> T13 降为备选（仅当富组件保真度短期追不上时，以 innate-wip embed 模式 + iframe 过渡）。
+
+| 任务 | 一句话 |
+| --- | --- |
+| [T14 内容预编译生成器](tasks/T14-blog-content-generator.md) | md/mdx → 构建期 TS 数据模块（frontmatter/TOC/高亮），内容保真度主战场 |
+| [T15 domains/blog 插件](tasks/T15-blog-domain-plugin.md) | **主线**：Blog 原生进 webshell（列表 + 详情路由 + flag），内容源不复制（file: → git subdir → 内容包三段演进） |
+| [T16 单一源与同步](tasks/T16-blog-content-single-source.md) | 可选收尾：定时/事件驱动重建或 innate-wip 内容包化，双端同源 |
+| [T13 chromeless iframe（备选）](tasks/T13-blog-iframe-quickwin.md) | 仅当 T14 富组件覆盖不足时过渡用：innate-wip 加 embed 模式去壳后 iframe 嵌入 |
+
 ## 开发计划要点
 
 - **位置**：webshell 与契约包先落在 innate-fe-base（`apps/webshell`、`packages/web-domain`、根 `tools/fe-plugin-cli/`），domain 示例放 `domains/<name>/`；跑通后若需要独立仓库再拆（cycle 的 REMOTE 模式，届时由 CLI 的 clone/link 子命令承接）。

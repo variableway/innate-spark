@@ -7,7 +7,7 @@
 **做法：**
 
 ```bash
-bun tools/innate-registry-cli/src/cli.ts clone
+$REG clone
 ```
 
 **例子输出（节选）：**
@@ -29,5 +29,5 @@ bun tools/innate-registry-cli/src/cli.ts clone
 指定另一份表：
 
 ```bash
-bun tools/innate-registry-cli/src/cli.ts clone --registry /tmp/apps.yaml
+$REG clone --registry /tmp/apps.yaml
 ```

@@ -7,7 +7,7 @@
 **做法：**
 
 ```bash
-bun tools/innate-registry-cli/src/cli.ts scan
+$REG scan
 ```
 
 **例子输出（节选）：**
@@ -31,5 +31,5 @@ bun tools/innate-registry-cli/src/cli.ts scan
 只扫一层目录时：
 
 ```bash
-bun tools/innate-registry-cli/src/cli.ts scan innate-apps --depth 1
+$REG scan innate-apps --depth 1
 ```

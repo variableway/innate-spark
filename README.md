@@ -49,5 +49,4 @@ bun tools/innate-registry-cli/src/cli.ts clone --registry tools/registry/base.ya
 索引见 [tools/README.md](tools/README.md)。
 
 - [tools/registry](tools/registry/) — Innate 项目登记表（apps / plugins / skills / deploy）
-- [tools/fire-skills](tools/fire-skills/) — `skill-spark`（Bun 多子命令 CLI：skill 管理 + `registry` 扫仓/克隆 + `selfhost` 自建 SMB 网盘；`bun run build:exe` 打单文件 binary）
-- [tools/innate-registry-cli](tools/innate-registry-cli/) · [tools/innate-selfhost-cli](tools/innate-selfhost-cli/) — 已合并进 `skill-spark`，仅作参考保留
+- [tools/innate-spark-cli](tools/innate-spark-cli/) — `skill-spark`（Bun 多子命令 CLI：skill 管理 + `registry` 扫仓/克隆 + `selfhost` 自建 SMB 网盘；`bun run build:exe` 打单文件 binary）

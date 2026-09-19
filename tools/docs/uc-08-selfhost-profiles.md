@@ -2,7 +2,7 @@
 
 **情境：** 家里 NAS 和懒猫不是同一台机器。希望一份 `config.json` 切换，不要靠一堆环境变量。
 
-**做法：** 在 [config.json](../fire-skills/config.json) 里加 profile：
+**做法：** 在 [config.json](../innate-spark-cli/config.json) 里加 profile：
 
 ```json
 {
